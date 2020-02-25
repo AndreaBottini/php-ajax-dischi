@@ -1,7 +1,7 @@
 <?php
 
 include __DIR__ .'/server.php';
-var_dump($db);
+// var_dump($db);
 
 // foreach ($db as $key => $disc) {
 //   echo $key;
@@ -18,6 +18,7 @@ var_dump($db);
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" href="dist/app.css">
    <title>Dischi</title>
  </head>
  <body>
