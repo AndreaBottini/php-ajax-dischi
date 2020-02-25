@@ -1,7 +1,15 @@
 <?php
 
 include __DIR__ .'/server.php';
-// var_dump($db)
+var_dump($db);
+
+// foreach ($db as $key => $disc) {
+//   echo $key;
+//   foreach ($disc as $key => $carat) {
+//     echo $disc['year'];
+//     echo $disc['title'];
+//   }
+// }
  ?>
 
  <!DOCTYPE html>
@@ -13,6 +21,20 @@ include __DIR__ .'/server.php';
    <title>Dischi</title>
  </head>
  <body>
+   <header>
 
+   </header>
+   <main>
+     <div class="container">
+       <div class="container-artist">
+         <?php foreach ($db as $key => $disc) {?>
+           <img src="<?php echo $disc['poster']; ?>" alt="">
+            <h3><?php echo $disc['title']; ?></h3>
+            <h4><?php echo $disc['author']; ?></h4>
+            <p><?php echo $disc['year']; ?></p>
+         <?php } ?>
+       </div>
+     </div>
+   </main>
  </body>
  </html>
