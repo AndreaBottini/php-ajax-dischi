@@ -54,7 +54,7 @@ $db = [
     'title' => 'The Beatles',
     'author' => 'The Beatles',
     'year' => 2009,
-    'poster' => 'https://img.discogs.com/9oRcCgH8UzSTmLeXMtF6NUtYGWk=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-1919340-1286213337.jpeg.jpg'
+    'poster' => 'https://img.discogs.com/Dup4WXL18w57o_VQEsiGk9pRBGQ=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-1920733-1481961068-7068.jpeg.jpg'
   ],
   [
     'title' => 'Cristian Bugatti',

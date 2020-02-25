@@ -1,0 +1,17 @@
+header {
+  height: 80px;
+  background-color: black;
+}
+
+.header_nav {
+  width: 70%;
+  margin: auto;
+}
+
+.logo_nav {
+  line-height: 120px;
+  vertical-align: middle;
+  .logo {
+    height: 50px;
+  }
+}

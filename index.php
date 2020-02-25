@@ -23,16 +23,22 @@ include __DIR__ .'/server.php';
  </head>
  <body>
    <header>
-
+     <div class="header_nav">
+       <div class="logo_nav">
+         <img class="logo" src="img/logosp2.png" alt="">
+       </div>
+     </div>
    </header>
    <main>
      <div class="container">
-       <div class="container-artist">
+       <div class="container_artist">
          <?php foreach ($db as $key => $disc) {?>
-           <img src="<?php echo $disc['poster']; ?>" alt="">
-            <h3><?php echo $disc['title']; ?></h3>
-            <h4><?php echo $disc['author']; ?></h4>
-            <p><?php echo $disc['year']; ?></p>
+           <div class="info_album">
+             <img class="image_artist" src="<?php echo $disc['poster']; ?>" alt="">
+              <h3><?php echo $disc['title']; ?></h3>
+              <h4><?php echo $disc['author']; ?></h4>
+              <p><?php echo $disc['year']; ?></p>
+           </div>
          <?php } ?>
        </div>
      </div>
