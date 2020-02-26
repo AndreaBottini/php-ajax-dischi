@@ -15818,7 +15818,30 @@ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"
 var Handlebars = __webpack_require__(/*! handlebars */ "./node_modules/handlebars/dist/cjs/handlebars.js");
 
 $(document).ready(function () {
-  alert('funziona?');
+  $.ajax({
+    url: 'http://localhost:8888/php-ajax-dischi/server2.php',
+    method: 'GET',
+    success: function success(data) {
+      var disc = data;
+      var source = $("#entry-template").html();
+      var template = Handlebars.compile(source);
+
+      for (var i = 0; i < disc.length; i++) {
+        console.log(disc[i]);
+        var context = {
+          poster: disc[i].poster,
+          title: disc[i].title,
+          author: disc[i].author,
+          year: disc[i].year
+        };
+        var html = template(context);
+        $('.container_artist').append(html);
+      }
+    },
+    error: function error(_error) {
+      alert('E\' avvenuto un errore');
+    }
+  });
 });
 
 /***/ }),
