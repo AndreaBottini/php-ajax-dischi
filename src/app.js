@@ -10,14 +10,14 @@ $(document).ready(function(){
 // ***** FUNZIONI ******
   function ajaxDisc() {
     $.ajax({
-      // url: 'http://localhost:8888/php-ajax-dischi/server2.php',
+      url: 'http://localhost:8888/php-ajax-dischi/server2.php',
       method: 'GET',
       success: function (data) {
         var disc = data;
 
         var source = $("#entry-template").html();
         var template = Handlebars.compile(source);
-        
+
         for (var i = 0; i < disc.length; i++) {
 
           // console.log(disc[i]);

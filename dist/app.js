@@ -15823,7 +15823,7 @@ $(document).ready(function () {
 
 function ajaxDisc() {
   $.ajax({
-    // url: 'http://localhost:8888/php-ajax-dischi/server2.php',
+    url: 'http://localhost:8888/php-ajax-dischi/server2.php',
     method: 'GET',
     success: function success(data) {
       var disc = data;
