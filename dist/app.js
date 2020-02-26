@@ -15818,8 +15818,12 @@ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"
 var Handlebars = __webpack_require__(/*! handlebars */ "./node_modules/handlebars/dist/cjs/handlebars.js");
 
 $(document).ready(function () {
+  ajaxDisc();
+}); // ***** FUNZIONI ******
+
+function ajaxDisc() {
   $.ajax({
-    url: 'http://localhost:8888/php-ajax-dischi/server2.php',
+    // url: 'http://localhost:8888/php-ajax-dischi/server2.php',
     method: 'GET',
     success: function success(data) {
       var disc = data;
@@ -15827,12 +15831,14 @@ $(document).ready(function () {
       var template = Handlebars.compile(source);
 
       for (var i = 0; i < disc.length; i++) {
-        console.log(disc[i]);
+        // console.log(disc[i]);
+        var thisDisc = disc[i];
+        console.log(thisDisc);
         var context = {
-          poster: disc[i].poster,
-          title: disc[i].title,
-          author: disc[i].author,
-          year: disc[i].year
+          poster: thisDisc.poster,
+          title: thisDisc.title,
+          author: thisDisc.author,
+          year: thisDisc.year
         };
         var html = template(context);
         $('.container_artist').append(html);
@@ -15842,7 +15848,9 @@ $(document).ready(function () {
       alert('E\' avvenuto un errore');
     }
   });
-});
+}
+
+;
 
 /***/ }),
 

@@ -31,15 +31,19 @@ include __DIR__ .'/server.php';
    </header>
    <main>
      <div class="container">
+       <?php if (!empty($db)) { ?>
        <div class="container_artist">
-         <?php foreach ($db as $key => $disc) {?>
-           <div class="info_album">
-             <img class="image_artist" src="<?php echo $disc['poster']; ?>" alt="">
-              <h3><?php echo $disc['title']; ?></h3>
-              <h4><?php echo $disc['author']; ?></h4>
-              <p><?php echo $disc['year']; ?></p>
-           </div>
-         <?php } ?>
+           <?php foreach ($db as $key => $disc) { ?>
+             <div class="info_album">
+               <img class="image_artist" src="<?php echo $disc['poster']; ?>" alt="">
+               <h3><?php echo $disc['title']; ?></h3>
+               <h4><?php echo $disc['author']; ?></h4>
+               <p><?php echo $disc['year']; ?></p>
+             </div>
+           <?php } ?>
+          <?php } else { ?>
+          <h2>Non ci sono risultati</h2>
+        <?php } ?>
        </div>
      </div>
    </main>
