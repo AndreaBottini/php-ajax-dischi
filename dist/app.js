@@ -15819,6 +15819,24 @@ var Handlebars = __webpack_require__(/*! handlebars */ "./node_modules/handlebar
 
 $(document).ready(function () {
   ajaxDisc();
+  resetAll();
+  $('#artists').change(function () {
+    var thisAuthor = $(this).val();
+    console.log(thisAuthor);
+    $.ajax({
+      url: 'http://localhost:8888/php-ajax-dischi/server2.php',
+      method: 'GET',
+      data: {
+        author: thisAuthor
+      },
+      success: function success(response) {
+        printData(response);
+      },
+      error: function error(request, state, errors) {
+        alert('errore');
+      }
+    });
+  });
 }); // ***** FUNZIONI ******
 
 function ajaxDisc() {
@@ -15826,23 +15844,7 @@ function ajaxDisc() {
     url: 'http://localhost:8888/php-ajax-dischi/server2.php',
     method: 'GET',
     success: function success(data) {
-      var disc = data;
-      var source = $("#entry-template").html();
-      var template = Handlebars.compile(source);
-
-      for (var i = 0; i < disc.length; i++) {
-        // console.log(disc[i]);
-        var thisDisc = disc[i];
-        console.log(thisDisc);
-        var context = {
-          poster: thisDisc.poster,
-          title: thisDisc.title,
-          author: thisDisc.author,
-          year: thisDisc.year
-        };
-        var html = template(context);
-        $('.container_artist').append(html);
-      }
+      printData(data);
     },
     error: function error(_error) {
       alert('E\' avvenuto un errore');
@@ -15851,6 +15853,30 @@ function ajaxDisc() {
 }
 
 ;
+
+function printData(data) {
+  var disc = data;
+  var source = $("#entry-template").html();
+  var template = Handlebars.compile(source);
+
+  for (var i = 0; i < disc.length; i++) {
+    // console.log(disc[i]);
+    var thisDisc = disc[i]; // console.log(thisDisc);
+
+    var context = {
+      poster: thisDisc.poster,
+      title: thisDisc.title,
+      author: thisDisc.author,
+      year: thisDisc.year
+    };
+    var html = template(context);
+    $('.container_artist').append(html);
+  }
+}
+
+function resetAll() {
+  $('.container_artist').html('');
+}
 
 /***/ }),
 

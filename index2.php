@@ -16,6 +16,19 @@
      <div class="header_nav">
        <div class="logo_nav">
          <img class="logo" src="img/logosp2.png" alt="">
+         <select name="artists" id="artists">
+         <option value="All">All</option>
+         <option value="Bon Jovi">Bon Jovi</option>
+         <option value="Ligabue">Ligabue</option>
+         <option value="Foo Fighters">Foo Fighters</option>
+         <option value="Muse">Muse</option>
+         <option value="Green Day">Green Day</option>
+         <option value="Nirvana">Nirvana</option>
+         <option value="Coldplay">Coldplay</option>
+         <option value="Articolo 31">Articolo 31</option>
+         <option value="The Beatles">The Beatles</option>
+         <option value="Bugo">Bugo</option>
+        </select>
        </div>
      </div>
    </header>
